@@ -92,6 +92,58 @@ dependencies {
 
 Please execute the SQL scripts to create the necessary tables and sequences in your Oracle Database.
 
+## Docker Compose for Oracle DB
+
+To simplify the Oracle Database setup, we are using Docker Compose.
+
+### `docker-compose.yml`
+
+The configuration for Docker Compose is present in the `docker-compose.yml` file:
+
+```yaml
+version: "3.0"
+services:
+  oracle:
+    image: gvenzl/oracle-xe:21-full
+    ports:
+      - 1521:1521
+    environment:
+      - "ORACLE_PASSWORD=changeme"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+volumes:
+  oracle-data:
+```
+
+### Docker Setup Steps
+
+1. Install [Docker](https://www.docker.com/products/docker-desktop) if you haven't already.
+
+2. Navigate to the project directory where `docker-compose.yml` is located.
+
+   ```bash
+   cd your-repo
+   ```
+
+3. Run the Docker Compose to start the Oracle service.
+
+   ```bash
+   docker-compose up -d
+   ```
+
+### Database Credentials
+
+- **URL:** `jdbc:oracle:thin:@localhost:1521:XE`
+- **Username:** `system`
+- **Password:** `changeme`
+
+### Stop Docker Compose
+
+To stop and remove all Docker containers defined in `docker-compose.yml`:
+
+```bash
+docker-compose down
+
 ## Contributing
 
 Contributions are welcome. Please fork the repository and create a pull request for any bug fixes, features or additions.
@@ -107,6 +159,8 @@ Adam Tomaja
 ---
 
 Happy coding!
+
+```
 
 ```
 
