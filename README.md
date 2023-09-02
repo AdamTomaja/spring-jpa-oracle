@@ -143,6 +143,7 @@ To stop and remove all Docker containers defined in `docker-compose.yml`:
 
 ```bash
 docker-compose down
+```
 
 ## Contributing
 
@@ -159,6 +160,8 @@ Adam Tomaja
 ---
 
 Happy coding!
+
+```
 
 ```
 
