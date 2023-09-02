@@ -1,0 +1,12 @@
+version: "3.0"
+services:
+  oracle:
+    image: gvenzl/oracle-xe:21-full
+    ports:
+      - 1521:1521
+    environment:
+      - "ORACLE_PASSWORD=changeme"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+volumes:
+  oracle-data:
