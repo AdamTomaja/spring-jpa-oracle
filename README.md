@@ -160,11 +160,3 @@ Adam Tomaja
 ---
 
 Happy coding!
-
-```
-
-```
-
-```
-
-```
